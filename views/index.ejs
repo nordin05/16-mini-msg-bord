@@ -4,15 +4,19 @@
         <link rel="stylesheet" href="/style.css">
     </head>
     <body>
-        <form method="GET" action="/new">
-            <button>Submit</button>
-        </form>
-        <% messages.forEach((msg) => { %>
-            <div>
-                <p><%- msg.text %></p>
-                <p><%- msg.user %></p>
-                <p><%- msg.added %></p>
-            </div>
-        <% }); %>
+        <header>
+            <form method="GET" action="/new">
+                <button>New Message</button>
+            </form>
+        </header>
+        <div class="container">
+            <% messages.forEach((msg) => { %>
+                <div class="msg">
+                    <h1><%- msg.user %></h1>
+                    <h2><%- msg.text %></h2>
+                    <p><%- msg.added.toLocaleString() %></p>
+                </div>
+            <% }); %>
+        </div>
     </body>
 </html>
