@@ -1,9 +1,18 @@
 <html>
-  <head>
-    <title>Mini Message Board</title>
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    Index
-  </body>
+    <head>
+        <title><%- title %></title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <form method="GET" action="/new">
+            <button>Submit</button>
+        </form>
+        <% messages.forEach((msg) => { %>
+            <div>
+                <p><%- msg.text %></p>
+                <p><%- msg.user %></p>
+                <p><%- msg.added %></p>
+            </div>
+        <% }); %>
+    </body>
 </html>
